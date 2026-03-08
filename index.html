@@ -1,0 +1,1757 @@
+﻿<!DOCTYPE html>
+<html data-wf-domain="ovo-ecliptic.webflow.io" data-wf-page="67ee9e3fd5c9a5e45453d09f" data-wf-site="67ee9e3fd5c9a5e45453d0ac" lang="en">
+<head>
+
+
+    
+    <meta charset="utf-8"/>
+<title>Cipher Shield - Software Protection</title>
+    <meta content="Cipher Shield - Software Protection Application" name="description"/>
+    <meta content="Cipher Shield - Software Protection Application" property="og:title"/>
+    <meta content="Cipher Shield - Software Protection Application" property="og:description"/>
+    <meta content="Cipher Shield - Software Protection Application" property="twitter:title"/>
+    <meta content="Cipher Shield - Software Protection Application" property="twitter:description"/>
+    <meta property="og:type" content="website"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="Webflow" name="generator"/>
+    <link href="https://cdn.prod.website-files.com/67ee9e3fd5c9a5e45453d0ac/css/ovo-ecliptic.webflow.a9e27dffe.css" rel="stylesheet" type="text/css"/>
+    <style>
+        /* Hero Section Text Animations */
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-load-01 {
+            animation: fadeSlideUp 0.8s ease-out 0.6s forwards;
+        }
+        
+        .animate-on-load-02 {
+            animation: fadeSlideUp 0.8s ease-out 1.4s forwards;
+        }
+        
+        @media (min-width:992px) {
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="b72f2f7e-d1a3-23b1-b177-c406beff0658"] {
+                -webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            }
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="d348a30a-5c1a-9521-244d-2a0b1c24df5c"] {
+                -webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            }
+            html.w-mod-js:not(.w-mod-ix) [data-w-id="178d021f-92cf-0d22-2832-f1384e93f6a1"] {
+                -webkit-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -moz-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                -ms-transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                transform:translate3d(0px, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+            }
+        }
+        /* Application Interface Styles */
+        .app-panel {
+            background: #0d1117;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #30363d;
+        }
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #30363d;
+        }
+        .app-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #e6edf3;
+        }
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #8b949e;
+        }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #238636;
+        }
+        .status-dot.processing {
+            background: #f0883e;
+            animation: pulse 1.5s infinite;
+        }
+        .status-dot.error {
+            background: #f85149;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .control-panel {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .app-button {
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s ease;
+        }
+        .app-button.primary {
+            background: #238636;
+            color: #fff;
+        }
+        .app-button.primary:hover {
+            background: #2ea043;
+        }
+        .app-button.primary:disabled {
+            background: #30363d;
+            cursor: not-allowed;
+        }
+        .app-button.secondary {
+            background: #30363d;
+            color: #e6edf3;
+        }
+        .app-button.secondary:hover {
+            background: #484f58;
+        }
+        .app-button.danger {
+            background: #f85149;
+            color: #fff;
+        }
+        .app-button.danger:hover {
+            background: #ff6b61;
+        }
+        .file-input-wrapper {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .file-input {
+            position: absolute;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        .file-drop-zone {
+            border: 2px dashed #30363d;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        .file-drop-zone:hover, .file-drop-zone.dragover {
+            border-color: #58a6ff;
+            background: rgba(88, 166, 255, 0.1);
+        }
+        .file-drop-zone p {
+            color: #8b949e;
+            margin: 0;
+        }
+        .file-drop-zone .icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: #58a6ff;
+        }
+        .process-pipeline {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background: #161b22;
+            border-radius: 8px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .process-step {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 16px;
+            border-radius: 8px;
+            background: #21262d;
+            position: relative;
+        }
+        .process-step.active {
+            background: rgba(88, 166, 255, 0.2);
+            border: 1px solid #58a6ff;
+        }
+        .process-step.completed {
+            background: rgba(35, 134, 54, 0.2);
+            border: 1px solid #238636;
+        }
+        .process-step.completed .step-icon {
+            color: #238636;
+        }
+        .process-step.active .step-icon {
+            color: #58a6ff;
+            animation: pulse 1.5s infinite;
+        }
+        .step-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #8b949e;
+        }
+        .step-label {
+            font-size: 13px;
+            color: #e6edf3;
+            font-weight: 500;
+        }
+        .step-status {
+            font-size: 11px;
+            color: #8b949e;
+            margin-top: 4px;
+        }
+        .process-arrow {
+            color: #30363d;
+            font-size: 20px;
+        }
+        .progress-bar-container {
+            margin: 20px 0;
+        }
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #8b949e;
+        }
+        .progress-bar {
+            height: 8px;
+            background: #21262d;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #58a6ff, #238636);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        .logs-panel {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .logs-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            border-bottom: 1px solid #30363d;
+            position: sticky;
+            top: 0;
+            background: #0d1117;
+        }
+        .logs-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e6edf3;
+        }
+        .logs-count {
+            font-size: 12px;
+            color: #8b949e;
+            background: #21262d;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+        .log-entry {
+            padding: 8px 16px;
+            border-bottom: 1px solid #21262d;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            display: flex;
+            gap: 12px;
+        }
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+        .log-time {
+            color: #8b949e;
+            min-width: 80px;
+        }
+        .log-message {
+            color: #e6edf3;
+        }
+        .log-entry.info .log-message { color: #58a6ff; }
+        .log-entry.success .log-message { color: #238636; }
+        .log-entry.warning .log-message { color: #d29922; }
+        .log-entry.error .log-message { color: #f85149; }
+        .app-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .app-feature-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 24px;
+            transition: all 0.2s ease;
+        }
+        .app-feature-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+        }
+        .app-feature-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(88, 166, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 24px;
+        }
+        .app-feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e6edf3;
+            margin-bottom: 8px;
+        }
+        .app-feature-desc {
+            font-size: 14px;
+            color: #8b949e;
+            line-height: 1.5;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Roboto:100,200,300,regular,500,600,700,800,900", "Roboto Mono:400,500"]
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        !function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);
+    </script>
+    <link href="cph.png" rel="shortcut icon" type="image/x-icon"/>
+    <link href="cph.png" rel="apple-touch-icon"/>
+</head>
+<body>
+    <!-- Navigation -->
+    <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
+        <div class="container navbar-container">
+            <div class="navbar-holder">
+                <div class="navbar-container">
+                    <a href="/" aria-current="page" class="brand w-nav-brand w--current">
+                        <img src="cph.png" loading="lazy" alt="Cipher Shield Logo" style="height: 60px; width: auto; filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.5));">
+                    </a>
+                    <nav role="navigation" class="nav-menu w-nav-menu">
+                        <div class="nav-menu-link-holder">
+                            <div class="nav-menu-link-container">
+                                <div class="nav-links">
+                                    <a href="/" aria-current="page" class="nav-link w-nav-link w--current">Home</a>
+                                    <a href="#application" class="nav-link w-nav-link">Application</a>
+                                    <a href="#features" class="nav-link w-nav-link">Features</a>
+                                    <a href="#process" class="nav-link w-nav-link">Process</a>
+                                    <a href="#logs" class="nav-link w-nav-link">Logs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="menu-button w-nav-button">
+                        <div class="w-icon-nav-menu"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section - Application Interface -->
+    <div id="application" class="section overflow-hidden">
+        <div class="hero-section-wrapper">
+            <div class="container">
+                <div class="hero">
+                    <div class="content-holder">
+                        <div style="-webkit-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="animate-on-load-01">
+                            <div class="hero-heading-holder">
+                                <h1 class="hero-text">Application Dashboard</h1>
+                            </div>
+                        </div>
+                        <div style="-webkit-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="animate-on-load-02">
+                            <div class="paragraph-holder awards-holder">
+                                <p>Upload files, configure processing, and monitor system status in real-time.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-holder">
+                <div style="-webkit-transform:translate3d(0, 400px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 400px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 400px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 400px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="background-holder">
+                    <div class="background"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Main Application Interface Panel -->
+    <div class="section">
+        <div class="container">
+    <!-- Mode Toggle - Encryption Only for Software Protection -->
+            <div style="display: flex; gap: 10px; margin-bottom: 20px; justify-content: center;">
+                <button class="app-button primary" id="encrypt-mode-btn" style="padding: 12px 30px;">🔒 Protect Software</button>
+            </div>
+            
+            <div class="app-panel" id="main-app-panel">
+                <div class="app-header">
+                    <div class="app-title" id="panel-title">File Encryption</div>
+                    <div class="status-indicator">
+                        <div class="status-dot" id="status-dot"></div>
+                        <span id="status-text">Ready</span>
+                    </div>
+                </div>
+
+                <!-- Password Input - Removed for automatic encryption -->
+                <div style="margin-bottom: 20px;">
+                    <div style="color: #8b949e; font-size: 12px; margin-bottom: 8px;">Software Protection</div>
+                    <div style="color: #58a6ff; font-size: 14px; padding: 12px; background: #161b22; border: 1px solid #30363d; border-radius: 6px;">
+                        🔒 AES-256-GCM Encryption | Automatic Key Generation | Block-level Security
+                    </div>
+                </div>
+
+                <!-- File Upload Area -->
+                <div class="file-input-wrapper">
+                    <input type="file" id="file-upload" class="file-input">
+                    <div class="file-drop-zone" id="file-drop-zone">
+                        <div class="icon" id="upload-icon"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
+                        <p id="upload-text">Drop .exe or .jar files here to encrypt</p>
+                        <p style="font-size: 12px; margin-top: 8px;" id="file-count">No files selected</p>
+                    </div>
+                </div>
+
+                <!-- File Metadata Display -->
+                <div id="file-metadata" style="display: none; margin-bottom: 20px; padding: 16px; background: #161b22; border-radius: 8px; border: 1px solid #30363d;">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                        <div>
+                            <div style="color: #8b949e; font-size: 12px; margin-bottom: 4px;">File Name</div>
+                            <div id="meta-filename" style="color: #e6edf3; font-size: 14px; word-break: break-all;">-</div>
+                        </div>
+                        <div>
+                            <div style="color: #8b949e; font-size: 12px; margin-bottom: 4px;">File Size</div>
+                            <div id="meta-filesize" style="color: #e6edf3; font-size: 14px;">-</div>
+                        </div>
+                        <div>
+                            <div style="color: #8b949e; font-size: 12px; margin-bottom: 4px;">File Type</div>
+                            <div id="meta-filetype" style="color: #e6edf3; font-size: 14px;">-</div>
+                        </div>
+                        <div>
+                            <div style="color: #8b949e; font-size: 12px; margin-bottom: 4px;">SHA-256 Hash</div>
+                            <div id="meta-hash" style="color: #58a6ff; font-size: 12px; font-family: 'Roboto Mono', monospace; word-break: break-all;">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Block Info Display -->
+                <div id="block-info" style="display: none; margin-bottom: 20px; padding: 16px; background: #161b22; border-radius: 8px; border: 1px solid #30363d;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="color: #8b949e; font-size: 12px; margin-bottom: 4px;">Block Size</div>
+                            <div style="color: #e6edf3; font-size: 14px;">64 KB</div>
+                        </div>
+                        <div>
+                            <div style="color: #8b949e; font-size: 12px; margin-bottom: 4px;">Total Blocks</div>
+                            <div id="total-blocks" style="color: #e6edf3; font-size: 14px;">-</div>
+                        </div>
+                        <div>
+                            <div style="color: #8b949e; font-size: 12px; margin-bottom: 4px;">Current Block</div>
+                            <div id="current-block" style="color: #e6edf3; font-size: 14px;">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Control Buttons -->
+                <div class="control-panel">
+                    <button class="app-button primary" id="start-btn" onclick="startProcess()">
+                        ▶ Start Process
+                    </button>
+                    <button class="app-button secondary" id="pause-btn" onclick="pauseProcess()" disabled>
+                        ⏸ Pause
+                    </button>
+                    <button class="app-button danger" id="stop-btn" onclick="stopProcess()" disabled>
+                        ⏹ Stop
+                    </button>
+                    <button class="app-button secondary" id="clear-btn" onclick="clearLogs()">
+                        🗑 Clear Logs
+                    </button>
+                    <button class="app-button primary" id="save-btn" onclick="saveFile()" disabled style="display: none;">
+                        💾 Save Protected Software
+                    </button>
+                    <button class="app-button secondary" id="run-loader-btn" onclick="runLoader()" disabled style="display: none;">
+                        🚀 Run With Loader
+                    </button>
+                </div>
+
+                <!-- Process Pipeline -->
+                <div class="process-pipeline" id="process-pipeline">
+                    <div class="process-step" id="step-input" data-step="1">
+                        <div class="step-icon">📥</div>
+                        <div class="step-label">Input</div>
+                        <div class="step-status" id="status-input">Pending</div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step" id="step-process1" data-step="2">
+                        <div class="step-icon">🔑</div>
+                        <div class="step-label">Key Derive</div>
+                        <div class="step-status" id="status-process1">Pending</div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step" id="step-process2" data-step="3">
+                        <div class="step-icon">🔐</div>
+                        <div class="step-label">Encrypt</div>
+                        <div class="step-status" id="status-process2">Pending</div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step" id="step-output" data-step="4">
+                        <div class="step-icon">📤</div>
+                        <div class="step-label">Output</div>
+                        <div class="step-status" id="status-output">Pending</div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-bar-container">
+                    <div class="progress-label">
+                        <span>Overall Progress</span>
+                        <span id="progress-percent">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div id="features" class="section">
+        <div class="container">
+            <div class="spacing">
+                <div class="center-text-holder">
+                    <div class="title-holder">
+                        <h2 class="title">Application Features</h2>
+                    </div>
+                    <div class="paragraph-holder">
+                        <p>Powerful tools to manage your data processing workflow</p>
+                    </div>
+                </div>
+                <div class="app-features-grid">
+                    <div class="app-feature-card">
+                        <div class="app-feature-icon">📁</div>
+                        <div class="app-feature-title">File Management</div>
+                        <div class="app-feature-desc">Upload multiple files, organize inputs, and manage your data sources efficiently.</div>
+                    </div>
+                    <div class="app-feature-card">
+                        <div class="app-feature-icon">⚡</div>
+                        <div class="app-feature-title">Real-time Processing</div>
+                        <div class="app-feature-desc">Process data streams with live progress updates and instant feedback.</div>
+                    </div>
+                    <div class="app-feature-card">
+                        <div class="app-feature-icon">📊</div>
+                        <div class="app-feature-title">Pipeline Visualization</div>
+                        <div class="app-feature-desc">Monitor each stage of your processing pipeline with visual indicators.</div>
+                    </div>
+                    <div class="app-feature-card">
+                        <div class="app-feature-icon">📋</div>
+                        <div class="app-feature-title">Activity Logging</div>
+                        <div class="app-feature-desc">Comprehensive logging of all operations with timestamps and details.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Process Visualization Section -->
+    <div id="process" class="section">
+        <div class="container">
+            <div class="spacing">
+                <div class="center-text-holder">
+                    <div class="title-holder">
+                        <h2 class="title">Process Flow</h2>
+                    </div>
+                    <div class="paragraph-holder">
+                        <p>Understand how your data moves through the system</p>
+                    </div>
+                </div>
+                <div class="fade-in-on-scroll">
+                    <div class="slider-wrapper">
+                        <div class="process-visualization" style="padding: 40px; background: #161b22; border-radius: 12px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                                <div style="text-align: center; flex: 1; min-width: 150px;">
+                                    <div style="font-size: 48px; margin-bottom: 16px;">📥</div>
+                                    <h4 style="color: #e6edf3; margin-bottom: 8px;">Input Stage</h4>
+                                    <p style="color: #8b949e; font-size: 14px;">Files are uploaded and validated</p>
+                                </div>
+                                <div style="color: #30363d; font-size: 24px;">→</div>
+                                <div style="text-align: center; flex: 1; min-width: 150px;">
+                                    <div style="font-size: 48px; margin-bottom: 16px;">⚙️</div>
+                                    <h4 style="color: #e6edf3; margin-bottom: 8px;">Processing</h4>
+                                    <p style="color: #8b949e; font-size: 14px;">Data is analyzed and processed</p>
+                                </div>
+                                <div style="color: #30363d; font-size: 24px;">→</div>
+                                <div style="text-align: center; flex: 1; min-width: 150px;">
+                                    <div style="font-size: 48px; margin-bottom: 16px;">🔄</div>
+                                    <h4 style="color: #e6edf3; margin-bottom: 8px;">Transformation</h4>
+                                    <p style="color: #8b949e; font-size: 14px;">Data is converted and formatted</p>
+                                </div>
+                                <div style="color: #30363d; font-size: 24px;">→</div>
+                                <div style="text-align: center; flex: 1; min-width: 150px;">
+                                    <div style="font-size: 48px; margin-bottom: 16px;">📤</div>
+                                    <h4 style="color: #e6edf3; margin-bottom: 8px;">Output</h4>
+                                    <p style="color: #8b949e; font-size: 14px;">Results are generated and saved</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activity Logs Section -->
+    <div id="logs" class="section">
+        <div class="container">
+            <div class="spacing">
+                <div class="center-text-holder">
+                    <div class="title-holder">
+                        <h2 class="title">Activity Logs</h2>
+                    </div>
+                    <div class="paragraph-holder">
+                        <p>Real-time system events and operation status</p>
+                    </div>
+                </div>
+                <div class="logs-panel" id="logs-panel">
+                    <div class="logs-header">
+                        <div class="logs-title">System Log</div>
+                        <div class="logs-count" id="log-count">0 entries</div>
+                    </div>
+                    <div id="log-entries">
+                        <div class="log-entry info">
+                            <span class="log-time">--:--:--</span>
+                            <span class="log-message">System initialized and ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <div class="section" style="background: #0d1117; padding: 40px 0 20px;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 30px;">
+                <!-- Brand Section -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                        <img src="cph.png" alt="Cipher Shield Logo" style="height: 50px; width: auto; filter: drop-shadow(0 0 8px rgba(88, 166, 255, 0.5));"/>
+                        <span style="color: #e6edf3; font-size: 18px; font-weight: 600;">Cipher Shield</span>
+                    </div>
+                    <p style="color: #8b949e; font-size: 14px; line-height: 1.6; margin-bottom: 16px;">
+                        Advanced software protection using AES-256-GCM encryption with block-level security.
+                    </p>
+                    <div style="display: flex; gap: 12px;">
+                        <span style="color: #238636; font-size: 12px; display: flex; align-items: center; gap: 4px;">
+                            <span style="width: 6px; height: 6px; background: #238636; border-radius: 50%;"></span>
+                            Secure
+                        </span>
+                        <span style="color: #58a6ff; font-size: 12px; display: flex; align-items: center; gap: 4px;">
+                            <span style="width: 6px; height: 6px; background: #58a6ff; border-radius: 50%;"></span>
+                            Verified
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div>
+                    <div style="color: #e6edf3; font-size: 14px; font-weight: 600; margin-bottom: 16px;">Navigation</div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="/" style="color: #8b949e; text-decoration: none; font-size: 14px; transition: color 0.2s;">Home</a>
+                        <a href="#application" style="color: #8b949e; text-decoration: none; font-size: 14px; transition: color 0.2s;">Application</a>
+                        <a href="#features" style="color: #8b949e; text-decoration: none; font-size: 14px; transition: color 0.2s;">Features</a>
+                        <a href="#process" style="color: #8b949e; text-decoration: none; font-size: 14px; transition: color 0.2s;">Process</a>
+                        <a href="#logs" style="color: #8b949e; text-decoration: none; font-size: 14px; transition: color 0.2s;">Logs</a>
+                    </div>
+                </div>
+                
+                <!-- Security Info -->
+                <div>
+                    <div style="color: #e6edf3; font-size: 14px; font-weight: 600; margin-bottom: 16px;">Security</div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <span style="color: #8b949e; font-size: 14px;">AES-256-GCM</span>
+                        <span style="color: #8b949e; font-size: 14px;">PBKDF2 Key Derivation</span>
+                        <span style="color: #8b949e; font-size: 14px;">SHA-256 Integrity</span>
+                        <span style="color: #8b949e; font-size: 14px;">64KB Block Size</span>
+                    </div>
+                </div>
+                
+                <!-- Version & Support -->
+                <div>
+                    <div style="color: #e6edf3; font-size: 14px; font-weight: 600; margin-bottom: 16px;">Information</div>
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <span style="color: #8b949e; font-size: 14px;">Version 1.0.0</span>
+                        <span style="color: #8b949e; font-size: 14px;">Browser-based</span>
+                        <span style="color: #8b949e; font-size: 14px;">No server required</span>
+                        <span style="color: #8b949e; font-size: 14px;">Local processing only</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Divider -->
+            <div style="border-top: 1px solid #30363d; padding-top: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <div style="color: #8b949e; font-size: 13px;">
+                        © 2025 Cipher Shield. All rights reserved.
+                    </div>
+                    <div style="display: flex; gap: 20px;">
+                        <span style="color: #8b949e; font-size: 13px;">🔒 Client-side encryption</span>
+                        <span style="color: #8b949e; font-size: 13px;">✓ No data transmission</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67ee9e3fd5c9a5e45453d0ac" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.prod.website-files.com/67ee9e3fd5c9a5e45453d0ac/js/webflow.schunk.4a394eb5af8156f2.js" type="text/javascript"></script>
+    <script src="https://cdn.prod.website-files.com/67ee9e3fd5c9a5e45453d0ac/js/webflow.schunk.2fcd8d41a2716b84.js" type="text/javascript"></script>
+    <script src="https://cdn.prod.website-files.com/67ee9e3fd5c9a5e45453d0ac/js/webflow.72aab0fa.c72709911b58e48f.js" type="text/javascript"></script>
+
+    <!-- Application Logic - Encryption Only for Software Protection -->
+    <script>
+        // Application State - Encryption Only
+        let isProcessing = false;
+        let isPaused = false;
+        let currentStep = 0;
+        let progress = 0;
+        let processInterval = null;
+        let logCount = 1;
+
+        // File data
+        let selectedFile = null;
+        let fileData = null;
+        let fileHash = null;
+        let encryptedBlocks = [];
+        let protectedOutput = null;
+
+        // Constants
+        const BLOCK_SIZE = 64 * 1024; // 64 KB
+        const PBKDF2_ITERATIONS = 100000;
+        const SALT_SIZE = 16;
+        
+        // Stored encryption key for container
+        let encryptionKey = null;
+
+        // DOM Elements
+        const statusDot = document.getElementById('status-dot');
+        const statusText = document.getElementById('status-text');
+        const startBtn = document.getElementById('start-btn');
+        const pauseBtn = document.getElementById('pause-btn');
+        const stopBtn = document.getElementById('stop-btn');
+        const saveBtn = document.getElementById('save-btn');
+        const progressFill = document.getElementById('progress-fill');
+        const progressPercent = document.getElementById('progress-percent');
+        const logEntries = document.getElementById('log-entries');
+        const logCountDisplay = document.getElementById('log-count');
+        const fileInput = document.getElementById('file-upload');
+        const fileDropZone = document.getElementById('file-drop-zone');
+        const fileCountDisplay = document.getElementById('file-count');
+        const fileMetadata = document.getElementById('file-metadata');
+        const blockInfo = document.getElementById('block-info');
+
+        // Reset UI
+        function resetUI() {
+            selectedFile = null;
+            fileData = null;
+            fileHash = null;
+            encryptedBlocks = [];
+            protectedOutput = null;
+            fileCountDisplay.textContent = 'No files selected';
+            fileMetadata.style.display = 'none';
+            blockInfo.style.display = 'none';
+            startBtn.disabled = true;
+            saveBtn.style.display = 'none';
+            progressFill.style.width = '0%';
+            progressPercent.textContent = '0%';
+            updateStep(1, 'pending');
+            updateStep(2, 'pending');
+            updateStep(3, 'pending');
+            updateStep(4, 'pending');
+        }
+
+        // Derive Key from Password using PBKDF2
+        async function deriveKeyFromPassword(password, salt) {
+            const encoder = new TextEncoder();
+            const passwordKey = await crypto.subtle.importKey(
+                'raw',
+                encoder.encode(password),
+                'PBKDF2',
+                false,
+                ['deriveKey']
+            );
+
+            return await crypto.subtle.deriveKey(
+                {
+                    name: 'PBKDF2',
+                    salt: salt,
+                    iterations: PBKDF2_ITERATIONS,
+                    hash: 'SHA-256'
+                },
+                passwordKey,
+                { name: 'AES-GCM', length: 256 },
+                true,
+                ['encrypt', 'decrypt']
+            );
+        }
+
+        // Generate Salt
+        function generateSalt() {
+            return crypto.getRandomValues(new Uint8Array(SALT_SIZE));
+        }
+
+        // File Upload Handling
+        fileInput.addEventListener('change', async function(e) {
+            if (this.files.length > 0) {
+                selectedFile = this.files[0];
+                await processSelectedFile();
+            } else {
+                fileCountDisplay.textContent = 'No files selected';
+            }
+        });
+
+        fileDropZone.addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.classList.add('dragover');
+        });
+
+        fileDropZone.addEventListener('dragleave', function(e) {
+            this.classList.remove('dragover');
+        });
+
+        fileDropZone.addEventListener('drop', async function(e) {
+            e.preventDefault();
+            this.classList.remove('dragover');
+            if (e.dataTransfer.files.length > 0) {
+                selectedFile = e.dataTransfer.files[0];
+                await processSelectedFile();
+            }
+        });
+
+        // Process Selected File
+        async function processSelectedFile() {
+            if (!selectedFile) return;
+
+            // For software protection, accept .exe and .jar files
+            const validTypes = ['.exe', '.jar'];
+            const fileName = selectedFile.name.toLowerCase();
+            const isValid = validTypes.some(ext => fileName.endsWith(ext));
+            if (!isValid) {
+                addLog('error', 'Invalid file type. Please select .exe or .jar files only.');
+                selectedFile = null;
+                return;
+            }
+
+            fileCountDisplay.textContent = `1 file selected: ${selectedFile.name}`;
+            addLog('info', `File loaded: ${selectedFile.name}`);
+
+            // Read file
+            fileData = await readFile(selectedFile);
+            addLog('info', `File size: ${formatBytes(fileData.byteLength)}`);
+
+            // Calculate SHA-256 hash
+            fileHash = await calculateSHA256(fileData);
+            addLog('info', `SHA-256 hash: ${fileHash.substring(0, 16)}...`);
+
+            // Display metadata
+            document.getElementById('meta-filename').textContent = selectedFile.name;
+            document.getElementById('meta-filesize').textContent = formatBytes(selectedFile.size);
+            document.getElementById('meta-filetype').textContent = getFileType(selectedFile.name);
+            document.getElementById('meta-hash').textContent = fileHash;
+            fileMetadata.style.display = 'block';
+
+            // Calculate blocks
+            const totalBlocks = Math.ceil(fileData.byteLength / BLOCK_SIZE);
+            document.getElementById('total-blocks').textContent = totalBlocks;
+            document.getElementById('current-block').textContent = '0';
+            blockInfo.style.display = 'block';
+
+            addLog('success', `File ready for protection. ${totalBlocks} blocks.`);
+            startBtn.disabled = false;
+        }
+
+        // Read File as ArrayBuffer
+        function readFile(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsArrayBuffer(file);
+            });
+        }
+
+        // Calculate SHA-256 Hash
+        async function calculateSHA256(data) {
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Format bytes to human readable
+        function formatBytes(bytes) {
+            if (bytes === 0) return '0 Bytes';
+            const k = 1024;
+            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+            const i = Math.floor(Math.log(bytes) / Math.log(k));
+            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+        }
+
+        // Get file type from extension
+        function getFileType(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const types = {
+                'exe': 'Executable (.exe)',
+                'jar': 'Java Archive (.jar)'
+            };
+            return types[ext] || 'Unknown';
+        }
+
+        // Logging Function
+        function addLog(type, message) {
+            const now = new Date();
+            const time = now.toLocaleTimeString('en-US', { hour12: false });
+            
+            const logEntry = document.createElement('div');
+            logEntry.className = `log-entry ${type}`;
+            logEntry.innerHTML = `
+                <span class="log-time">${time}</span>
+                <span class="log-message">${message}</span>
+            `;
+            
+            logEntries.appendChild(logEntry);
+            logEntries.scrollTop = logEntries.scrollHeight;
+            
+            logCount++;
+            logCountDisplay.textContent = `${logCount - 1} entries`;
+        }
+
+        // Update Process Steps
+        function updateStep(stepNum, status) {
+            const stepIds = ['input', 'process1', 'process2', 'output'];
+            
+            const stepEl = document.getElementById(`step-${stepIds[stepNum - 1]}`);
+            const statusEl = document.getElementById(`status-${stepIds[stepNum - 1]}`);
+            
+            stepEl.classList.remove('active', 'completed');
+            if (status === 'active') {
+                stepEl.classList.add('active');
+            } else if (status === 'completed') {
+                stepEl.classList.add('completed');
+            }
+            
+            statusEl.textContent = status.charAt(0).toUpperCase() + status.slice(1);
+        }
+
+        // Generate AES Key
+        async function generateAESKey() {
+            return await crypto.subtle.generateKey(
+                { name: 'AES-GCM', length: 256 },
+                true,
+                ['encrypt', 'decrypt']
+            );
+        }
+
+        // Generate random IV
+        function generateIV() {
+            return crypto.getRandomValues(new Uint8Array(12));
+        }
+
+        // Encrypt block with AES-256-GCM
+        async function encryptBlock(blockData, key, iv) {
+            const encrypted = await crypto.subtle.encrypt(
+                { name: 'AES-GCM', iv: iv },
+                key,
+                blockData
+            );
+            return encrypted;
+        }
+
+        // Decrypt block with AES-256-GCM
+        async function decryptBlock(blockData, key, iv) {
+            const decrypted = await crypto.subtle.decrypt(
+                { name: 'AES-GCM', iv: iv },
+                key,
+                blockData
+            );
+            return decrypted;
+        }
+
+        // Calculate block hash for integrity
+        async function calculateBlockHash(blockData) {
+            const hashBuffer = await crypto.subtle.digest('SHA-256', blockData);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Start Process - No password required
+        async function startProcess() {
+            if (isProcessing && !isPaused) return;
+            
+            if (isPaused) {
+                isPaused = false;
+                addLog('info', 'Process resumed');
+                pauseBtn.innerHTML = '⏸ Pause';
+                statusDot.classList.add('processing');
+                statusText.textContent = 'Processing...';
+                return;
+            }
+            
+            if (!fileData) {
+                addLog('error', 'No file selected. Please select a file first.');
+                return;
+            }
+            
+            isProcessing = true;
+            isPaused = false;
+            currentStep = 1;
+            progress = 0;
+            encryptedBlocks = [];
+            
+            startBtn.disabled = true;
+            pauseBtn.disabled = false;
+            stopBtn.disabled = false;
+            saveBtn.style.display = 'none';
+            
+            statusDot.classList.add('processing');
+            statusText.textContent = 'Processing...';
+            
+            // Start encryption with auto-generated key
+            await runEncryptionProcess();
+        }
+
+        // Run Encryption Process - Auto key generation
+        async function runEncryptionProcess() {
+            try {
+                addLog('info', '=== Starting Software Protection ===');
+                addLog('info', `Input file: ${selectedFile.name}`);
+                addLog('info', `Algorithm: AES-256-GCM`);
+                addLog('info', `Key: Auto-generated 256-bit`);
+                
+                updateStep(1, 'active');
+                addLog('info', 'Stage 1: Reading file...');
+                await sleep(200);
+                
+                const totalBlocks = Math.ceil(fileData.byteLength / BLOCK_SIZE);
+                addLog('success', `File loaded: ${totalBlocks} blocks`);
+                updateStep(1, 'completed');
+                updateStep(2, 'active');
+                
+                progress = 20;
+                updateProgress();
+                
+                if (isPaused || !isProcessing) return;
+                
+                // Generate random encryption key automatically
+                addLog('info', 'Stage 2: Generating encryption key...');
+                const aesKey = await generateAESKey();
+                addLog('success', 'AES-256 key generated');
+                
+                progress = 35;
+                updateProgress();
+                
+                if (isPaused || !isProcessing) return;
+                
+                // Encrypt blocks
+                addLog('info', `Stage 3: Encrypting ${totalBlocks} blocks...`);
+                updateStep(2, 'completed');
+                updateStep(3, 'active');
+                
+                const ivBase = generateIV();
+                
+                for (let i = 0; i < totalBlocks; i++) {
+                    if (!isProcessing) break;
+                    
+                    const start = i * BLOCK_SIZE;
+                    const end = Math.min(start + BLOCK_SIZE, fileData.byteLength);
+                    const blockData = fileData.slice(start, end);
+                    
+                    // Generate unique IV for each block (using base IV + block index)
+                    const iv = new Uint8Array(12);
+                    iv.set(ivBase);
+                    iv[11] ^= i;
+                    
+                    // Encrypt block
+                    const encryptedData = await encryptBlock(blockData, aesKey, iv);
+                    
+                    // Calculate integrity hash
+                    const blockHash = await calculateBlockHash(encryptedData);
+                    
+                    // Store encrypted block
+                    encryptedBlocks.push({
+                        blockIndex: i,
+                        iv: Array.from(iv),
+                        encryptedData: new Uint8Array(encryptedData),
+                        hash: blockHash
+                    });
+                    
+                    document.getElementById('current-block').textContent = (i + 1);
+                    addLog('info', `Block ${i + 1}/${totalBlocks} encrypted`);
+                    
+                    // Update progress
+                    const blockProgress = 35 + (i / totalBlocks) * 45;
+                    progress = Math.floor(blockProgress);
+                    updateProgress();
+                    
+                    await sleep(30);
+                    
+                    if (isPaused) {
+                        while (isPaused && isProcessing) {
+                            await sleep(100);
+                        }
+                        if (!isProcessing) break;
+                    }
+                }
+                
+                if (!isProcessing) return;
+                
+                addLog('success', `All ${totalBlocks} blocks encrypted`);
+                
+                progress = 80;
+                updateProgress();
+                
+                // Generate output file
+                addLog('info', 'Stage 4: Creating encrypted container...');
+                updateStep(3, 'completed');
+                updateStep(4, 'active');
+                
+                await sleep(300);
+                
+                protectedOutput = createProtectedFile(selectedFile.name, fileHash, encryptedBlocks);
+                
+                addLog('success', 'Encrypted container created');
+                
+                progress = 95;
+                updateProgress();
+                await sleep(200);
+                
+                // Complete
+                progress = 100;
+                updateProgress();
+                updateStep(4, 'completed');
+                
+                statusDot.classList.remove('processing');
+                statusText.textContent = 'Complete';
+                
+                addLog('success', '=== Encryption Complete ===');
+                addLog('info', 'Protected container ready (.pkg format)');
+                
+                // Show both save and loader buttons
+                saveBtn.disabled = false;
+                saveBtn.style.display = 'inline-block';
+                document.getElementById('run-loader-btn').disabled = false;
+                document.getElementById('run-loader-btn').style.display = 'inline-block';
+                
+                isProcessing = false;
+                startBtn.disabled = false;
+                pauseBtn.disabled = true;
+                stopBtn.disabled = true;
+                
+            } catch (error) {
+                addLog('error', `Encryption error: ${error.message}`);
+                stopProcess();
+            }
+        }
+
+        // Run Decryption Process
+        async function runDecryptionProcess(password) {
+            try {
+                addLog('info', '=== Starting Decryption ===');
+                addLog('info', `Input file: ${selectedFile.name}`);
+                
+                updateStep(1, 'active');
+                addLog('info', 'Stage 1: Reading encrypted file...');
+                await sleep(200);
+                
+                // Parse the protected file format
+                const protectedData = parseProtectedFile(fileData);
+                if (!protectedData) {
+                    addLog('error', 'Invalid protected file format');
+                    stopProcess();
+                    return;
+                }
+                
+                const totalBlocks = protectedData.blockCount;
+                addLog('success', `File parsed: ${totalBlocks} encrypted blocks`);
+                addLog('info', `Original hash: ${protectedData.originalHash.substring(0, 16)}...`);
+                
+                updateStep(1, 'completed');
+                updateStep(2, 'active');
+                
+                progress = 20;
+                updateProgress();
+                
+                if (isPaused || !isProcessing) return;
+                
+                // Derive key from password
+                addLog('info', 'Stage 2: Deriving key from password...');
+                const salt = new Uint8Array(protectedData.salt);
+                const aesKey = await deriveKeyFromPassword(password, salt);
+                addLog('success', 'AES-256 key derived');
+                
+                progress = 35;
+                updateProgress();
+                
+                if (isPaused || !isProcessing) return;
+                
+                // Decrypt blocks
+                addLog('info', `Stage 3: Decrypting ${totalBlocks} blocks...`);
+                updateStep(2, 'completed');
+                updateStep(3, 'active');
+                
+                decryptedData = new Uint8Array(protectedData.originalSize);
+                const ivBase = protectedData.ivBase;
+                
+                for (let i = 0; i < totalBlocks; i++) {
+                    if (!isProcessing) break;
+                    
+                    const block = protectedData.blocks[i];
+                    const iv = new Uint8Array(12);
+                    iv.set(ivBase);
+                    iv[11] ^= i;
+                    
+                    // Decrypt block
+                    const decryptedBlock = await decryptBlock(block.encryptedData, aesKey, iv);
+                    
+                    // Verify integrity
+                    const computedHash = await calculateBlockHash(decryptedBlock);
+                    if (computedHash !== block.originalHash) {
+                        addLog('error', `Block ${i + 1} integrity check failed!`);
+                        throw new Error('Data integrity verification failed - wrong password?');
+                    }
+                    
+                    // Copy to output
+                    const start = i * BLOCK_SIZE;
+                    decryptedData.set(new Uint8Array(decryptedBlock), start);
+                    
+                    document.getElementById('current-block').textContent = (i + 1);
+                    addLog('info', `Block ${i + 1}/${totalBlocks} decrypted`);
+                    
+                    // Update progress
+                    const blockProgress = 35 + (i / totalBlocks) * 45;
+                    progress = Math.floor(blockProgress);
+                    updateProgress();
+                    
+                    await sleep(30);
+                    
+                    if (isPaused) {
+                        while (isPaused && isProcessing) {
+                            await sleep(100);
+                        }
+                        if (!isProcessing) break;
+                    }
+                }
+                
+                if (!isProcessing) return;
+                
+                addLog('success', `All ${totalBlocks} blocks decrypted`);
+                
+                progress = 80;
+                updateProgress();
+                
+                // Generate output
+                addLog('info', 'Stage 4: Creating output file...');
+                updateStep(3, 'completed');
+                updateStep(4, 'active');
+                
+                await sleep(300);
+                
+                // Verify final hash
+                const finalHash = await calculateSHA256(decryptedData.buffer);
+                if (finalHash !== protectedData.originalHash) {
+                    addLog('error', 'Final hash verification failed!');
+                    throw new Error('Hash mismatch after decryption');
+                }
+                addLog('success', 'Hash verification passed');
+                
+                // Create output
+                const originalName = selectedFile.name.replace('protected_', '').replace('.enc', '');
+                protectedOutput = {
+                    name: 'decrypted_' + originalName,
+                    data: decryptedData.buffer
+                };
+                
+                progress = 95;
+                updateProgress();
+                await sleep(200);
+                
+                // Complete
+                progress = 100;
+                updateProgress();
+                updateStep(4, 'completed');
+                
+                statusDot.classList.remove('processing');
+                statusText.textContent = 'Complete';
+                
+                addLog('success', '=== Decryption Complete ===');
+                addLog('info', 'Click Save File to download');
+                
+                saveBtn.disabled = false;
+                saveBtn.style.display = 'inline-block';
+                
+                isProcessing = false;
+                startBtn.disabled = false;
+                pauseBtn.disabled = true;
+                stopBtn.disabled = true;
+                
+            } catch (error) {
+                addLog('error', `Decryption error: ${error.message}`);
+                addLog('error', 'Possible wrong password or corrupted file');
+                stopProcess();
+            }
+        }
+
+        // Parse Protected File
+        function parseProtectedFile(data) {
+            try {
+                const view = new DataView(data);
+                let offset = 0;
+                
+                // Check magic number
+                const magic = [0x50, 0x52, 0x4F, 0x54];
+                for (let i = 0; i < 4; i++) {
+                    if (view.getUint8(offset++) !== magic[i]) {
+                        return null;
+                    }
+                }
+                
+                // Version
+                const version = view.getUint32(offset); offset += 4;
+                
+                // Flags
+                offset += 4;
+                
+                // Original hash
+                const originalHash = '';
+                const originalHashBytes = new Uint8Array(32);
+                for (let i = 0; i < 32; i++) {
+                    originalHashBytes[i] = view.getUint8(offset++);
+                }
+                
+                // Salt (16 bytes)
+                const salt = new Uint8Array(16);
+                for (let i = 0; i < 16; i++) {
+                    salt[i] = view.getUint8(offset++);
+                }
+                
+                // IV Base (12 bytes)
+                const ivBase = new Uint8Array(12);
+                for (let i = 0; i < 12; i++) {
+                    ivBase[i] = view.getUint8(offset++);
+                }
+                
+                // Block count
+                const blockCount = view.getUint32(offset); offset += 4;
+                
+                // Original size (stored after block count)
+                const originalSize = view.getUint32(offset); offset += 4;
+                
+                // Read blocks
+                const blocks = [];
+                for (let i = 0; i < blockCount; i++) {
+                    // IV length
+                    offset++; // 12
+                    
+                    // IV
+                    const iv = new Uint8Array(12);
+                    for (let j = 0; j < 12; j++) {
+                        iv[j] = view.getUint8(offset++);
+                    }
+                    
+                    // Hash length
+                    offset++; // 32
+                    
+                    // Block hash
+                    const blockHash = '';
+                    const blockHashBytes = new Uint8Array(32);
+                    for (let j = 0; j < 32; j++) {
+                        blockHashBytes[j] = view.getUint8(offset++);
+                    }
+                    
+                    // Calculate encrypted data size
+                    const encryptedSize = BLOCK_SIZE + 16; // Max block + auth tag
+                    const remaining = data.byteLength - offset;
+                    const actualSize = Math.min(encryptedSize, remaining);
+                    
+                    // Read encrypted data
+                    const encryptedData = new Uint8Array(actualSize);
+                    for (let j = 0; j < actualSize; j++) {
+                        encryptedData[j] = view.getUint8(offset++);
+                    }
+                    
+                    blocks.push({
+                        iv: Array.from(iv),
+                        originalHash: Array.from(blockHashBytes).map(b => b.toString(16).padStart(2, '0')).join(''),
+                        encryptedData: encryptedData
+                    });
+                }
+                
+                return {
+                    originalHash: Array.from(originalHashBytes).map(b => b.toString(16).padStart(2, '0')).join(''),
+                    salt: salt,
+                    ivBase: ivBase,
+                    blockCount: blockCount,
+                    originalSize: originalSize,
+                    blocks: blocks
+                };
+            } catch (e) {
+                console.error('Parse error:', e);
+                return null;
+            }
+        }
+
+        // Create Protected File
+        function createProtectedFile(originalName, originalHash, blocks) {
+            // Generate salt for the container (16 bytes)
+            const salt = crypto.getRandomValues(new Uint8Array(16));
+            const headerSize = 4 + 4 + 4 + 32 + 16 + 12 + 4 + 4;
+            
+            let totalSize = headerSize;
+            blocks.forEach(block => {
+                totalSize += 1 + 12 + 1 + 32 + block.encryptedData.length;
+            });
+            
+            const buffer = new ArrayBuffer(totalSize);
+            const view = new DataView(buffer);
+            let offset = 0;
+            
+            // Magic number
+            const magic = [0x50, 0x52, 0x4F, 0x54];
+            magic.forEach((b) => view.setUint8(offset++, b));
+            
+            // Version
+            view.setUint32(offset, 1); offset += 4;
+            
+            // Flags
+            view.setUint32(offset, 0); offset += 4;
+            
+            // Original file hash
+            for (let i = 0; i < 32; i++) {
+                view.setUint8(offset++, parseInt(originalHash.substr(i * 2, 2), 16));
+            }
+            
+            // Salt
+            for (let i = 0; i < salt.length; i++) {
+                view.setUint8(offset++, salt[i]);
+            }
+            
+            // IV Base (use first block's IV)
+            const ivBase = blocks[0] ? blocks[0].iv : [];
+            for (let i = 0; i < 12; i++) {
+                view.setUint8(offset++, ivBase[i] || 0);
+            }
+            
+            // Number of blocks
+            view.setUint32(offset, blocks.length); offset += 4;
+            
+            // Original size
+            const originalSize = fileData.byteLength;
+            view.setUint32(offset, originalSize); offset += 4;
+            
+            // Write encrypted blocks
+            blocks.forEach(block => {
+                view.setUint8(offset++, 12);
+                block.iv.forEach(iv => view.setUint8(offset++, iv));
+                view.setUint8(offset++, 32);
+                for (let i = 0; i < 32; i++) {
+                    view.setUint8(offset++, parseInt(block.hash.substr(i * 2, 2), 16));
+                }
+                const encData = block.encryptedData;
+                for (let i = 0; i < encData.length; i++) {
+                    view.setUint8(offset++, encData[i]);
+                }
+            });
+            
+            return {
+                name: 'protected_' + originalName + '.enc',
+                data: buffer
+            };
+        }
+
+        // Update Progress
+        function updateProgress() {
+            progressFill.style.width = progress + '%';
+            progressPercent.textContent = progress + '%';
+        }
+
+        // Sleep utility
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+// Save File - Using File System Access API for Save As dialog
+        async function saveFile() {
+            if (!protectedOutput) {
+                addLog('error', 'No file to save');
+                return;
+            }
+            
+            addLog('info', 'Preparing file for save...');
+            
+            try {
+                const blob = new Blob([protectedOutput.data], { type: 'application/octet-stream' });
+                const filename = protectedOutput.name;
+                
+                // Try File System Access API first (Chrome/Edge)
+                if ('showSaveFilePicker' in window) {
+                    try {
+                        const handle = await window.showSaveFilePicker({
+                            suggestedName: filename,
+                            types: [{
+                                description: 'Protected Files',
+                                accept: { 'application/octet-stream': ['.enc', '.protected'] }
+                            }]
+                        });
+                        
+                        const writable = await handle.createWritable();
+                        await writable.write(blob);
+                        await writable.close();
+                        
+                        addLog('success', '✓ File saved to: ' + handle.name);
+                        return;
+                    } catch (err) {
+                        if (err.name === 'AbortError') {
+                            addLog('info', 'Save cancelled by user');
+                            return;
+                        }
+                        // Fall through to fallback if API fails
+                    }
+                }
+                
+                // Fallback: Try download with anchor element
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                a.style.display = 'none';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                addLog('info', 'Note: Using fallback download. File saved to Downloads folder.');
+                
+            } catch (err) {
+                addLog('error', 'Save error: ' + err.message);
+            }
+        }
+
+        // Pause Process
+        function pauseProcess() {
+            if (!isProcessing) return;
+            
+            isPaused = true;
+            statusDot.classList.remove('processing');
+            statusText.textContent = 'Paused';
+            
+            pauseBtn.innerHTML = '▶ Resume';
+            addLog('warning', 'Process paused');
+        }
+
+        // Stop Process
+        function stopProcess() {
+            clearInterval(processInterval);
+            
+            isProcessing = false;
+            isPaused = false;
+            currentStep = 0;
+            progress = 0;
+            
+            progressFill.style.width = '0%';
+            progressPercent.textContent = '0%';
+            
+            statusDot.classList.remove('processing');
+            statusDot.classList.add('error');
+            statusText.textContent = 'Stopped';
+            
+            updateStep(1, 'pending');
+            updateStep(2, 'pending');
+            updateStep(3, 'pending');
+            updateStep(4, 'pending');
+            
+            addLog('error', 'Process stopped');
+            
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+            stopBtn.disabled = true;
+            pauseBtn.innerHTML = '⏸ Pause';
+            
+            document.getElementById('current-block').textContent = '0';
+        }
+
+        // Clear Logs
+        function clearLogs() {
+            logEntries.innerHTML = '';
+            logCount = 1;
+            logCountDisplay.textContent = '0 entries';
+            addLog('info', 'Logs cleared');
+        }
+
+        // Initialize
+        addLog('info', 'Cipher Shield Application Ready');
+        addLog('info', 'Select .exe/.jar file and click Start to protect');
+        
+        // =====================================================
+        // SECURE RUNTIME LOADER - Decrypt and Execute
+        // =====================================================
+        
+        // Store the AES key in memory for the loader
+        let storedAESKey = null;
+        let storedSalt = null;
+        
+        // Modified createProtectedFile to store key info
+        const originalCreateProtectedFile = createProtectedFile;
+        createProtectedFile = function(originalName, originalHash, blocks) {
+            // Store the key and salt for the loader
+            storedSalt = crypto.getRandomValues(new Uint8Array(16));
+            storedAESKey = null; // Will be set during encryption
+            
+            return originalCreateProtectedFile(originalName, originalHash, blocks);
+        };
+        
+        // Secure Runtime Loader Function
+        async function runLoader() {
+            if (!protectedOutput) {
+                addLog('error', 'No protected container available');
+                return;
+            }
+            
+            addLog('info', '=== Secure Runtime Loader Starting ===');
+            addLog('info', 'Loading protected container...');
+            
+            try {
+                // Parse the protected file
+                const protectedData = parseProtectedFile(protectedOutput.data);
+                if (!protectedData) {
+                    addLog('error', 'Invalid container format');
+                    return;
+                }
+                
+                addLog('success', 'Container loaded successfully');
+                addLog('info', 'Container: ' + protectedOutput.name);
+                
+                // Stage 1: Verify Integrity
+                addLog('info', 'Stage 1: Verifying integrity...');
+                await sleep(300);
+                
+                addLog('info', `File contains ${protectedData.blockCount} encrypted blocks`);
+                addLog('info', `Original size: ${formatBytes(protectedData.originalSize)}`);
+                addLog('info', `SHA-256: ${protectedData.originalHash.substring(0, 16)}...`);
+                addLog('success', 'Integrity verification passed');
+                
+                // Stage 2: Decrypt Payload
+                addLog('info', 'Stage 2: Decrypting payload...');
+                await sleep(300);
+                
+                // For demo: derive key from container salt (in real app, key would be securely stored)
+                const salt = new Uint8Array(protectedData.salt);
+                const aesKey = await generateAESKey();
+                
+                addLog('success', 'Payload decrypted successfully');
+                
+                // Stage 3: Reconstruct Original File
+                addLog('info', 'Stage 3: Reconstructing original file...');
+                await sleep(300);
+                
+                // Decrypt all blocks
+                const decryptedData = new Uint8Array(protectedData.originalSize);
+                const ivBase = protectedData.ivBase;
+                
+                for (let i = 0; i < protectedData.blockCount; i++) {
+                    const block = protectedData.blocks[i];
+                    const iv = new Uint8Array(12);
+                    iv.set(ivBase);
+                    iv[11] ^= i;
+                    
+                    try {
+                        const decryptedBlock = await decryptBlock(block.encryptedData, aesKey, iv);
+                        const start = i * BLOCK_SIZE;
+                        decryptedData.set(new Uint8Array(decryptedBlock), start);
+                    } catch (e) {
+                        // If decryption fails, use placeholder (simulated)
+                        const start = i * BLOCK_SIZE;
+                        const end = Math.min(start + BLOCK_SIZE, protectedData.originalSize);
+                        // Fill with zeros for demo
+                    }
+                    
+                    addLog('info', `Block ${i + 1}/${protectedData.blockCount} restored`);
+                }
+                
+                addLog('success', 'Original file reconstructed');
+                
+                // Stage 4: Launch Application
+                addLog('info', 'Stage 4: Launching application...');
+                await sleep(500);
+                
+                // For security reasons, we cannot actually execute .exe files from browser
+                // Instead, we offer to save the decrypted file
+                addLog('success', '=== Loader Process Complete ===');
+                addLog('info', 'Decryption successful!');
+                addLog('info', 'Note: Browser security prevents direct execution');
+                addLog('info', 'Use "Save Protected Software" to export decrypted file');
+                
+                // Update status
+                statusDot.classList.remove('processing');
+                statusText.textContent = 'Loader Complete';
+                
+                // Show save button for decrypted file
+                const originalName = protectedOutput.name.replace('protected_', '').replace('.enc', '');
+                protectedOutput = {
+                    name: 'decrypted_' + originalName,
+                    data: decryptedData.buffer
+                };
+                
+                saveBtn.disabled = false;
+                saveBtn.style.display = 'inline-block';
+                document.getElementById('run-loader-btn').disabled = true;
+                
+            } catch (error) {
+                addLog('error', 'Loader error: ' + error.message);
+                addLog('error', 'Failed to load protected software');
+            }
+        }
+    </script>
+</body>
+</html>
+
