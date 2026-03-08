@@ -376,6 +376,302 @@
             color: #8b949e;
             line-height: 1.5;
         }
+        
+        /* ========================================
+           HERO PIPELINE VISUALIZATION STYLES
+           ======================================== */
+        
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            width: 100%;
+        }
+        
+        .hero-content {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .hero-pipeline {
+            flex: 1;
+            max-width: 600px;
+            min-width: 300px;
+        }
+        
+        /* Pipeline Container */
+        .pipeline-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: rgba(13, 17, 23, 0.8);
+            border-radius: 16px;
+            border: 1px solid #30363d;
+            overflow: hidden;
+        }
+        
+        .pipeline-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        /* Connection Lines */
+        .pipeline-path {
+            fill: none;
+            stroke: #30363d;
+            stroke-width: 2;
+        }
+        
+        .pipeline-path-glow {
+            fill: none;
+            stroke: url(#flowGradient);
+            stroke-width: 3;
+            stroke-linecap: round;
+            filter: drop-shadow(0 0 6px rgba(88, 166, 255, 0.6));
+        }
+        
+        /* Flow Animation */
+        @keyframes flowAnimation {
+            0% {
+                stroke-dashoffset: 40;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        .flow-line {
+            stroke-dasharray: 8 12;
+            animation: flowAnimation 1s linear infinite;
+        }
+        
+        .flow-line-slow {
+            animation-duration: 1.5s;
+        }
+        
+        .flow-line-fast {
+            animation-duration: 0.7s;
+        }
+        
+        /* Pipeline Nodes */
+        .pipeline-nodes {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .node {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transform: translate(-50%, -50%);
+        }
+        
+        .node-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #161b22 0%, #21262d 100%);
+            border: 2px solid #30363d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            box-shadow: 0 0 20px rgba(88, 166, 255, 0.15);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .node-circle::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #58a6ff, #a371f7);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .node:hover .node-circle,
+        .node.active .node-circle {
+            border-color: #58a6ff;
+            box-shadow: 0 0 30px rgba(88, 166, 255, 0.4);
+        }
+        
+        .node:hover .node-circle::before,
+        .node.active .node-circle::before {
+            opacity: 0.3;
+        }
+        
+        .node-label {
+            margin-top: 8px;
+            font-size: 11px;
+            color: #8b949e;
+            text-align: center;
+            white-space: nowrap;
+            font-weight: 500;
+            max-width: 80px;
+            line-height: 1.3;
+        }
+        
+        .node-icon {
+            font-size: 22px;
+        }
+        
+        /* Stage 1 Nodes - Left side */
+        .stage1-node {
+            left: 18%;
+        }
+        
+        /* Stage 2 Nodes - Center */
+        .stage2-node {
+            left: 50%;
+        }
+        
+        /* Stage 3 Node - Right */
+        .stage3-node {
+            left: 82%;
+        }
+        
+        /* Core nodes (stage 2) - larger glow */
+        .node.core .node-circle {
+            width: 70px;
+            height: 70px;
+            border-color: #58a6ff;
+            box-shadow: 0 0 25px rgba(88, 166, 255, 0.3);
+        }
+        
+        .node.core .node-icon {
+            font-size: 26px;
+        }
+        
+        /* Final node - strong glow */
+        .node.final .node-circle {
+            width: 80px;
+            height: 80px;
+            border-color: #238636;
+            background: linear-gradient(135deg, #161b22 0%, #0d1117 100%);
+            box-shadow: 0 0 35px rgba(35, 134, 54, 0.4);
+        }
+        
+        .node.final .node-icon {
+            font-size: 30px;
+        }
+        
+        .node.final .node-label {
+            color: #7ee787;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        /* Node pulse animation */
+        @keyframes nodePulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(88, 166, 255, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(88, 166, 255, 0.5);
+            }
+        }
+        
+        .node.active .node-circle {
+            animation: nodePulse 2s ease-in-out infinite;
+        }
+        
+        /* Stage labels */
+        .stage-label {
+            position: absolute;
+            font-size: 10px;
+            color: #484f58;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+        
+        .stage-label-stage1 {
+            left: 18%;
+            top: 15px;
+        }
+        
+        .stage-label-stage2 {
+            left: 50%;
+            top: 15px;
+            transform: translateX(-50%);
+        }
+        
+        .stage-label-stage3 {
+            right: 18%;
+            top: 15px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 991px) {
+            .hero-wrapper {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+            
+            .hero-pipeline {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .pipeline-container {
+                height: 450px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .pipeline-container {
+                height: 550px;
+            }
+            
+            .node-circle {
+                width: 50px;
+                height: 50px;
+                font-size: 18px;
+            }
+            
+            .node.core .node-circle {
+                width: 58px;
+                height: 58px;
+            }
+            
+            .node.final .node-circle {
+                width: 65px;
+                height: 65px;
+            }
+            
+            .node-label {
+                font-size: 9px;
+                max-width: 60px;
+            }
+            
+            .stage1-node {
+                left: 25%;
+            }
+            
+            .stage2-node {
+                left: 50%;
+            }
+            
+            .stage3-node {
+                left: 75%;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
@@ -423,25 +719,151 @@
         </div>
     </div>
 
-    <!-- Hero Section - Application Interface -->
+    <!-- Hero Section - Application Interface with Pipeline Visualization -->
     <div id="application" class="section overflow-hidden">
         <div class="hero-section-wrapper">
             <div class="container">
-                <div class="hero">
-                    <div class="content-holder">
+                <div class="hero-wrapper">
+                    <div class="hero-content">
                         <div style="-webkit-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="animate-on-load-01">
                             <div class="hero-heading-holder">
-<h1 class="hero-heading">Cipher Shield</h1>
+                                <h1 class="hero-heading">Cipher Shield</h1>
                             </div>
                         </div>
                         <div style="-webkit-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="animate-on-load-02">
                             <div class="paragraph-holder awards-holder">
-<p class="hero-tagline">Advanced Software Protection Solution</p>
+                                <p class="hero-tagline">Advanced Software Protection Solution</p>
                             </div>
                         </div>
                         <div style="-webkit-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 45px, 0) scale3d(0.96, 0.96, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0" class="animate-on-load-03">
                             <div class="paragraph-holder">
-<p class="hero-description">Secure your software with AES-256-GCM encryption. Protect .exe and .jar files with block-level security.</p>
+                                <p class="hero-description">Secure your software with AES-256-GCM encryption. Protect .exe and .jar files with block-level security.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Pipeline Visualization -->
+                    <div class="hero-pipeline">
+                        <div class="pipeline-container">
+                            <!-- SVG Connections -->
+                            <svg class="pipeline-svg" viewBox="0 0 600 500" preserveAspectRatio="xMidYMid meet">
+                                <defs>
+                                    <linearGradient id="flowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:1" />
+                                        <stop offset="50%" style="stop-color:#a371f7;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#238636;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                
+                                <!-- Stage 1 to Stage 2 connections (5 to 2) -->
+                                <!-- From Node 1 -->
+                                <path class="pipeline-path" d="M108 80 Q180 180 300 210" />
+                                <path class="pipeline-path-glow flow-line" d="M108 80 Q180 180 300 210" />
+                                
+                                <path class="pipeline-path" d="M108 80 Q180 80 300 290" />
+                                <path class="pipeline-path-glow flow-line flow-line-slow" d="M108 80 Q180 80 300 290" />
+                                
+                                <!-- From Node 2 -->
+                                <path class="pipeline-path" d="M108 170 Q180 200 300 210" />
+                                <path class="pipeline-path-glow flow-line" d="M108 170 Q180 200 300 210" />
+                                
+                                <path class="pipeline-path" d="M108 170 Q180 120 300 290" />
+                                <path class="pipeline-path-glow flow-line flow-line-fast" d="M108 170 Q180 120 300 290" />
+                                
+                                <!-- From Node 3 -->
+                                <path class="pipeline-path" d="M108 260 Q180 220 300 210" />
+                                <path class="pipeline-path-glow flow-line" d="M108 260 Q180 220 300 210" />
+                                
+                                <path class="pipeline-path" d="M108 260 Q180 160 300 290" />
+                                <path class="pipeline-path-glow flow-line flow-line-slow" d="M108 260 Q180 160 300 290" />
+                                
+                                <!-- From Node 4 -->
+                                <path class="pipeline-path" d="M108 350 Q180 240 300 210" />
+                                <path class="pipeline-path-glow flow-line" d="M108 350 Q180 240 300 210" />
+                                
+                                <path class="pipeline-path" d="M108 350 Q180 200 300 290" />
+                                <path class="pipeline-path-glow flow-line flow-line-fast" d="M108 350 Q180 200 300 290" />
+                                
+                                <!-- From Node 5 -->
+                                <path class="pipeline-path" d="M108 440 Q180 260 300 210" />
+                                <path class="pipeline-path-glow flow-line" d="M108 440 Q180 260 300 210" />
+                                
+                                <path class="pipeline-path" d="M108 440 Q180 240 300 290" />
+                                <path class="pipeline-path-glow flow-line flow-line-slow" d="M108 440 Q180 240 300 290" />
+                                
+                                <!-- Stage 2 to Stage 3 connections (2 to 1) -->
+                                <path class="pipeline-path" d="M300 210 Q420 250 492 250" />
+                                <path class="pipeline-path-glow flow-line" d="M300 210 Q420 250 492 250" />
+                                
+                                <path class="pipeline-path" d="M300 290 Q420 250 492 250" />
+                                <path class="pipeline-path-glow flow-line flow-line-fast" d="M300 290 Q420 250 492 250" />
+                            </svg>
+                            
+                            <!-- Pipeline Nodes -->
+                            <div class="pipeline-nodes">
+                                <!-- Stage Labels -->
+                                <span class="stage-label stage-label-stage1">Preparation</span>
+                                <span class="stage-label stage-label-stage2">Processing</span>
+                                <span class="stage-label stage-label-stage3">Output</span>
+                                
+                                <!-- Stage 1: Five Processing Nodes -->
+                                <div class="node stage1-node" style="top: 16%;">
+                                    <div class="node-circle">
+                                        <span class="node-icon">📄</span>
+                                    </div>
+                                    <span class="node-label">File Validation</span>
+                                </div>
+                                
+                                <div class="node stage1-node" style="top: 34%;">
+                                    <div class="node-circle">
+                                        <span class="node-icon">📊</span>
+                                    </div>
+                                    <span class="node-label">Metadata Analysis</span>
+                                </div>
+                                
+                                <div class="node stage1-node" style="top: 52%;">
+                                    <div class="node-circle">
+                                        <span class="node-icon">🧱</span>
+                                    </div>
+                                    <span class="node-label">Block Segmentation</span>
+                                </div>
+                                
+                                <div class="node stage1-node" style="top: 70%;">
+                                    <div class="node-circle">
+                                        <span class="node-icon">🔐</span>
+                                    </div>
+                                    <span class="node-label">Encryption Prep</span>
+                                </div>
+                                
+                                <div class="node stage1-node" style="top: 88%;">
+                                    <div class="node-circle">
+                                        <span class="node-icon">✓</span>
+                                    </div>
+                                    <span class="node-label">Integrity Setup</span>
+                                </div>
+                                
+                                <!-- Stage 2: Two Core Processing Nodes -->
+                                <div class="node stage2-node core" style="top: 42%;">
+                                    <div class="node-circle">
+                                        <span class="node-icon">🔒</span>
+                                    </div>
+                                    <span class="node-label">Encryption Engine</span>
+                                </div>
+                                
+                                <div class="node stage2-node core" style="top: 58%;">
+                                    <div class="node-circle">
+                                        <span class="node-icon">🛡️</span>
+                                    </div>
+                                    <span class="node-label">Integrity Verification</span>
+                                </div>
+                                
+                                <!-- Stage 3: Final Output Node -->
+                                <div class="node stage3-node final" style="top: 50%;">
+                                    <div class="node-circle">
+                                        <span class="node-icon">✅</span>
+                                    </div>
+                                    <span class="node-label">Protected Software</span>
+                                </div>
                             </div>
                         </div>
                     </div>

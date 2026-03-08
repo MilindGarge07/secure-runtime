@@ -46,3 +46,12 @@
 - [x] Decryption functionality
 - [x] File save/load functionality
 
+## Step 11: Add Hero Pipeline Visualization ✅
+- [x] Add converging pipeline diagram (5→2→1 structure)
+- [x] Stage 1: Five Processing Nodes (File Validation, Metadata Analysis, Block Segmentation, Encryption Prep, Integrity Setup)
+- [x] Stage 2: Two Core Nodes (Encryption Engine, Integrity Verification)
+- [x] Stage 3: Final Output (Protected Software)
+- [x] SVG curved connections with animated flowing light effect
+- [x] Node design with glow, icons, and labels
+- [x] Responsive behavior for desktop/tablet/mobile
+
