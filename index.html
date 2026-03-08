@@ -893,11 +893,13 @@
                     </div>
                 </div>
 
-                <!-- Password Input - Removed for automatic encryption -->
+
+                <!-- Password Input - For key derivation -->
                 <div style="margin-bottom: 20px;">
-                    <div style="color: #8b949e; font-size: 12px; margin-bottom: 8px;">Software Protection</div>
-                    <div style="color: #58a6ff; font-size: 14px; padding: 12px; background: #161b22; border: 1px solid #30363d; border-radius: 6px;">
-                        🔒 AES-256-GCM Encryption | Automatic Key Generation | Block-level Security
+                    <div style="color: #8b949e; font-size: 12px; margin-bottom: 8px;">Protection Password</div>
+                    <input type="password" id="encryption-password" placeholder="Enter password to protect your software" style="width: 100%; padding: 12px; background: #161b22; border: 1px solid #30363d; border-radius: 6px; color: #e6edf3; font-size: 14px; box-sizing: border-box;">
+                    <div style="color: #8b949e; font-size: 11px; margin-top: 6px;">
+                        🔒 AES-256-GCM | PBKDF2 100K Iterations | Block-level Security
                     </div>
                 </div>
 
@@ -1020,34 +1022,192 @@
             <div class="spacing">
                 <div class="center-text-holder">
                     <div class="title-holder">
-                        <h2 class="title">Application Features</h2>
+                        <h2 class="title">Protection Architecture</h2>
                     </div>
                     <div class="paragraph-holder">
-                        <p>Powerful tools to manage your data processing workflow</p>
+                        <p>Advanced security system core</p>
                     </div>
                 </div>
-                <div class="app-features-grid">
-                    <div class="app-feature-card">
-                        <div class="app-feature-icon">📁</div>
-                        <div class="app-feature-title">File Management</div>
-                        <div class="app-feature-desc">Upload multiple files, organize inputs, and manage your data sources efficiently.</div>
+                
+                <!-- Orbit Visualization Container - CLASSY DESIGN -->
+                <div class="orbit-features-wrapper" style="display: flex; align-items: center; justify-content: center; gap: 80px; margin: 60px 0; flex-wrap: wrap;">
+                    
+                    <!-- Left Feature Explanations -->
+                    <div class="feature-text-column" style="flex: 1; min-width: 240px; max-width: 320px;">
+                        <div class="feature-text-block" style="margin-bottom: 32px;">
+                            <div class="feature-name" style="color: #e6edf3; font-size: 18px; font-weight: 600; margin-bottom: 8px;">AES-256 Encryption</div>
+                            <div class="feature-desc" style="color: #8b949e; font-size: 14px; line-height: 1.6;">Protects software using advanced encryption standards with military-grade security.</div>
+                        </div>
+                        <div class="feature-text-block" style="margin-bottom: 32px;">
+                            <div class="feature-name" style="color: #e6edf3; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Block Segmentation</div>
+                            <div class="feature-desc" style="color: #8b949e; font-size: 14px; line-height: 1.6;">Divides the application into secure 64KB encrypted blocks for maximum protection.</div>
+                        </div>
+                        <div class="feature-text-block">
+                            <div class="feature-name" style="color: #e6edf3; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Integrity Verification</div>
+                            <div class="feature-desc" style="color: #8b949e; font-size: 14px; line-height: 1.6;">Ensures protected software cannot be tampered using SHA-256 hashing.</div>
+                        </div>
                     </div>
-                    <div class="app-feature-card">
-                        <div class="app-feature-icon">⚡</div>
-                        <div class="app-feature-title">Real-time Processing</div>
-                        <div class="app-feature-desc">Process data streams with live progress updates and instant feedback.</div>
+                    
+                    <!-- Center Orbit Animation - CLASSY ELEGANT DESIGN -->
+                    <div class="orbit-visualization" style="position: relative; width: 480px; height: 480px; display: flex; align-items: center; justify-content: center;">
+                        
+                        <!-- SVG Orbit Rings - Elegant & Clean -->
+                        <svg class="orbit-svg" viewBox="0 0 480 480" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <defs>
+                                <!-- Gradient for outer ring -->
+                                <linearGradient id="ringGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#58a6ff;stop-opacity:0.8" />
+                                    <stop offset="50%" style="stop-color:#a371f7;stop-opacity:0.6" />
+                                    <stop offset="100%" style="stop-color:#58a6ff;stop-opacity:0.8" />
+                                </linearGradient>
+                                <!-- Gradient for middle ring -->
+                                <linearGradient id="ringGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#238636;stop-opacity:0.8" />
+                                    <stop offset="50%" style="stop-color:#7ee787;stop-opacity:0.6" />
+                                    <stop offset="100%" style="stop-color:#238636;stop-opacity:0.8" />
+                                </linearGradient>
+                                <!-- Gradient for inner ring -->
+                                <linearGradient id="ringGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f778ba;stop-opacity:0.8" />
+                                    <stop offset="50%" style="stop-color:#ff9bce;stop-opacity:0.6" />
+                                    <stop offset="100%" style="stop-color:#f778ba;stop-opacity:0.8" />
+                                </linearGradient>
+                                <!-- Glow filter -->
+                                <filter id="ringGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                                    <feMerge>
+                                        <feMergeNode in="blur"/>
+                                        <feMergeNode in="SourceGraphic"/>
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            
+                            <!-- Outer solid ring - elegant continuous circle -->
+                            <circle cx="240" cy="240" r="200" fill="none" stroke="url(#ringGradient1)" stroke-width="2" opacity="0.6" filter="url(#ringGlow)" />
+                            
+                            <!-- Outer dashed ring - subtle animation -->
+                            <circle cx="240" cy="240" r="200" fill="none" stroke="#58a6ff" stroke-width="1" opacity="0.25" stroke-dasharray="60 40">
+                                <animateTransform attributeName="transform" type="rotate" from="0 240 240" to="360 240 240" dur="120s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <!-- Middle solid ring -->
+                            <circle cx="240" cy="240" r="150" fill="none" stroke="url(#ringGradient2)" stroke-width="2" opacity="0.6" filter="url(#ringGlow)" />
+                            
+                            <!-- Middle dashed ring -->
+                            <circle cx="240" cy="240" r="150" fill="none" stroke="#238636" stroke-width="1" opacity="0.25" stroke-dasharray="45 30">
+                                <animateTransform attributeName="transform" type="rotate" from="360 240 240" to="0 240 240" dur="90s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <!-- Inner solid ring -->
+                            <circle cx="240" cy="240" r="100" fill="none" stroke="url(#ringGradient3)" stroke-width="2" opacity="0.6" filter="url(#ringGlow)" />
+                            
+                            <!-- Inner dashed ring -->
+                            <circle cx="240" cy="240" r="100" fill="none" stroke="#f778ba" stroke-width="1" opacity="0.25" stroke-dasharray="30 20">
+                                <animateTransform attributeName="transform" type="rotate" from="0 240 240" to="360 240 240" dur="60s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <!-- Small decorative dots on outer ring -->
+                            <circle cx="240" cy="40" r="4" fill="#58a6ff" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+                            </circle>
+                            <circle cx="440" cy="240" r="4" fill="#a371f7" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite" begin="1s"/>
+                            </circle>
+                            <circle cx="240" cy="440" r="4" fill="#58a6ff" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite" begin="2s"/>
+                            </circle>
+                            <circle cx="40" cy="240" r="4" fill="#a371f7" opacity="0.8">
+                                <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+                            </circle>
+                        </svg>
+                        
+                        <!-- Logo in Center -->
+                        <div class="orbit-logo" style="position: relative; z-index: 10; text-align: center;">
+                            <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #161b22 0%, #0d1117 100%); border: 2px solid #58a6ff; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 30px rgba(88, 166, 255, 0.4), 0 0 60px rgba(163, 113, 247, 0.2), inset 0 0 20px rgba(88, 166, 255, 0.1);">
+                                <img src="cph.png" alt="Cipher Shield" style="width: 60px; height: auto; filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.8));">
+                            </div>
+                        </div>
+                        
+                        <!-- STABLE Feature Labels - Fixed positions around the orbit -->
+                        <!-- Top labels -->
+                        <div style="position: absolute; top: 5%; left: 50%; transform: translateX(-50%); text-align: center;">
+                            <span style="color: #58a6ff; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-shadow: 0 0 8px rgba(88, 166, 255, 0.5); white-space: nowrap;">AES-256</span>
+                        </div>
+                        
+                        <!-- Top right -->
+                        <div style="position: absolute; top: 18%; right: 8%; text-align: right;">
+                            <span style="color: #a371f7; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(163, 113, 247, 0.5); white-space: nowrap;">Block</span>
+                            <br><span style="color: #a371f7; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(163, 113, 247, 0.5); white-space: nowrap;">Segmentation</span>
+                        </div>
+                        
+                        <!-- Right -->
+                        <div style="position: absolute; top: 50%; right: 3%; transform: translateY(-50%); text-align: center;">
+                            <span style="color: #7ee787; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(126, 231, 135, 0.5); white-space: nowrap;">Integrity</span>
+                        </div>
+                        
+                        <!-- Bottom right -->
+                        <div style="position: absolute; bottom: 18%; right: 8%; text-align: right;">
+                            <span style="color: #f778ba; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(247, 120, 186, 0.5); white-space: nowrap;">Secure</span>
+                            <br><span style="color: #f778ba; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(247, 120, 186, 0.5); white-space: nowrap;">Runtime</span>
+                        </div>
+                        
+                        <!-- Bottom -->
+                        <div style="position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); text-align: center;">
+                            <span style="color: #58a6ff; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-shadow: 0 0 8px rgba(88, 166, 255, 0.5); white-space: nowrap;">Key Security</span>
+                        </div>
+                        
+                        <!-- Bottom left -->
+                        <div style="position: absolute; bottom: 18%; left: 8%; text-align: left;">
+                            <span style="color: #a371f7; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(163, 113, 247, 0.5); white-space: nowrap;">Loader</span>
+                            <br><span style="color: #a371f7; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(163, 113, 247, 0.5); white-space: nowrap;">Protection</span>
+                        </div>
+                        
+                        <!-- Left -->
+                        <div style="position: absolute; top: 50%; left: 3%; transform: translateY(-50%); text-align: center;">
+                            <span style="color: #7ee787; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(126, 231, 135, 0.5); white-space: nowrap;">SHA-256</span>
+                        </div>
+                        
+                        <!-- Top left -->
+                        <div style="position: absolute; top: 18%; left: 8%; text-align: left;">
+                            <span style="color: #f778ba; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(247, 120, 186, 0.5); white-space: nowrap;">PBKDF2</span>
+                            <br><span style="color: #f778ba; font-size: 12px; font-weight: 500; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(247, 120, 186, 0.5); white-space: nowrap;">100K Iterations</span>
+                        </div>
                     </div>
-                    <div class="app-feature-card">
-                        <div class="app-feature-icon">📊</div>
-                        <div class="app-feature-title">Pipeline Visualization</div>
-                        <div class="app-feature-desc">Monitor each stage of your processing pipeline with visual indicators.</div>
-                    </div>
-                    <div class="app-feature-card">
-                        <div class="app-feature-icon">📋</div>
-                        <div class="app-feature-title">Activity Logging</div>
-                        <div class="app-feature-desc">Comprehensive logging of all operations with timestamps and details.</div>
+                    
+                    <!-- Right Feature Explanations -->
+                    <div class="feature-text-column" style="flex: 1; min-width: 240px; max-width: 320px;">
+                        <div class="feature-text-block" style="margin-bottom: 32px;">
+                            <div class="feature-name" style="color: #e6edf3; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Secure Runtime</div>
+                            <div class="feature-desc" style="color: #8b949e; font-size: 14px; line-height: 1.6;">Controls execution of encrypted software in a protected environment.</div>
+                        </div>
+                        <div class="feature-text-block" style="margin-bottom: 32px;">
+                            <div class="feature-name" style="color: #e6edf3; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Loader Protection</div>
+                            <div class="feature-desc" style="color: #8b949e; font-size: 14px; line-height: 1.6;">Manages secure loading and decryption of encrypted blocks on demand.</div>
+                        </div>
+                        <div class="feature-text-block">
+                            <div class="feature-name" style="color: #e6edf3; font-size: 18px; font-weight: 600; margin-bottom: 8px;">Key Security</div>
+                            <div class="feature-desc" style="color: #8b949e; font-size: 14px; line-height: 1.6;">Protects encryption keys using PBKDF2 with 100,000 iterations.</div>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Responsive: Stack on mobile -->
+                <style>
+                    @media (max-width: 991px) {
+                        .orbit-features-wrapper {
+                            flex-direction: column !important;
+                        }
+                        .orbit-visualization {
+                            order: -1 !important;
+                            width: 320px !important;
+                            height: 320px !important;
+                        }
+                        .feature-text-column {
+                            text-align: center !important;
+                            max-width: 100% !important;
+                        }
+                    }
+                </style>
             </div>
         </div>
     </div>
@@ -1524,13 +1684,28 @@
             await runEncryptionProcess();
         }
 
-        // Run Encryption Process - Auto key generation
+        // Run Encryption Process - Password-based key derivation
         async function runEncryptionProcess() {
             try {
+                // Get password from input
+                const passwordInput = document.getElementById('encryption-password');
+                const password = passwordInput ? passwordInput.value : '';
+                
+                if (!password) {
+                    addLog('error', 'Please enter a password to protect your software');
+                    isProcessing = false;
+                    startBtn.disabled = false;
+                    pauseBtn.disabled = true;
+                    stopBtn.disabled = true;
+                    statusDot.classList.remove('processing');
+                    statusText.textContent = 'Ready';
+                    return;
+                }
+                
                 addLog('info', '=== Starting Software Protection ===');
                 addLog('info', `Input file: ${selectedFile.name}`);
                 addLog('info', `Algorithm: AES-256-GCM`);
-                addLog('info', `Key: Auto-generated 256-bit`);
+                addLog('info', `Key Derivation: PBKDF2 with 100K iterations`);
                 
                 updateStep(1, 'active');
                 addLog('info', 'Stage 1: Reading file...');
@@ -1546,10 +1721,14 @@
                 
                 if (isPaused || !isProcessing) return;
                 
-                // Generate random encryption key automatically
-                addLog('info', 'Stage 2: Generating encryption key...');
-                const aesKey = await generateAESKey();
-                addLog('success', 'AES-256 key generated');
+                // Generate salt and derive key from password
+                addLog('info', 'Stage 2: Deriving key from password...');
+                const salt = generateSalt();
+                const aesKey = await deriveKeyFromPassword(password, salt);
+                addLog('success', 'AES-256 key derived from password');
+                
+                // Store salt for decryption
+                encryptionKey = { key: aesKey, salt: salt };
                 
                 progress = 35;
                 updateProgress();
